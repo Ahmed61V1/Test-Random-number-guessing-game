@@ -1,18 +1,23 @@
 import random
 n = 0
+a = 0
 random = random.randint(1,100)
 while n == 0:
   x = int(input("Please guess a number between 1 and 100: "))
   if x < random:
     print("Guess bigger next time")
+    a = a + 1
   if x > random:
     print("Guess smaller next time aight man")
+    a = a + 1
   if x == random:
-    c = input("W, wanna try again(Y for yes, N for no)")
+    a = a + 1
+    c = input(f"W you got it in {a} attempts, wanna try again(Y for yes, N for no)")
     c = c.title()
     if c == "Y":
       import random
       random = random.randint(1,100)
+      a = 0
     if c == "N":
       print("Aight Imma doze off")
       n = n+1
