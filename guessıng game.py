@@ -1,0 +1,27 @@
+#random library is used to randomize a number
+import random
+n = 0
+a = 0
+#randomizes the random variable between 1 and 100
+random = random.randint(1,100)
+while n == 0:
+  x = int(input("Please guess a number between 1 and 100: "))
+#tells the player if they are under, over or guessed the number
+  if x < random:
+    print("Guess bigger next time")
+    a = a + 1
+  if x > random:
+    print("Guess smaller next time aight man")
+    a = a + 1
+  if x == random:
+    a = a + 1
+#asks the user if they want to loop or not.
+    c = input(f"W you got it in {a} attempts, wanna try again(Y for yes, N for no)")
+    c = c.title()
+    if c == "Y":
+      import random
+      random = random.randint(1,100)
+      a = 0
+    if c == "N":
+      print("Aight Imma doze off")
+      n = n+1
